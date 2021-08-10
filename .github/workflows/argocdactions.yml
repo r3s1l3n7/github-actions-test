@@ -22,8 +22,7 @@ jobs:
           options: --client
       - name: shell command
         run: |
-          argocd version -o json
-          argocd version
+          argocd version --client
 
       
        
