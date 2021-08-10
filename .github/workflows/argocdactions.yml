@@ -11,11 +11,20 @@ jobs:
   argocd_cli_install:
     runs-on: ubuntu-latest
     steps:
-      - name: Install ArgoCD apiVersion
+      - name: Checkout
+        uses: actions/checkout@v2 
+
+      - name: Install ArgoCD_CLI
         uses: clowdhaus/argo-cd-action/@main
         with:
           version: 2.0.0
           command: version
           options: --client
+      - name: shell command
+        run: |
+          argocd version -o json
+          argocd version
+
       
+       
 
