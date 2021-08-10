@@ -1,4 +1,4 @@
-name: EKS Cluster Onboarding
+name: eks-cluster-onboarding
 on: 
   push:
   pull_request:
@@ -7,10 +7,9 @@ on:
       - assigned
       - opened
       - reopened
-
 jobs:
-  ArgoCD Install:
-    runs-on:  ubuntu-latest
+  argocd_cli_install:
+    runs-on: ubuntu-latest
     steps:
       - name: Install ArgoCD apiVersion
         uses: clowdhaus/argo-cd-action/@main
