@@ -9,7 +9,11 @@ jobs:
         run: |
           pwd
           ls -a
-
+          echo $GITHUB_SHA
+          echo $GITHUB_REPOSITORY
+          echo ${{ github.token }}
+          # git clone git@github:$GITHUB_REPOSITORY
+          # git checkout $GITHUB_SHA
       - name: Git Checkout
         uses: actions/checkout@v2
 
@@ -25,6 +29,6 @@ jobs:
           who-to-greet: 'Mona the Octocat'
 
       - name: Log time
-        run: echo "${{steps.greet.output.time}}"
+        run: echo "${{ steps.greet.output.time }}"
         
 
