@@ -3,7 +3,12 @@ on: [push]
 jobs:
   run-github-actions:
     runs-on: ubuntu-latest
+
     steps:
+      - name: List files
+        run: |
+          pwd
+          ls
       - name: Hello World Action
         id: greet
         uses: actions/hello-world-javascript-action@main
