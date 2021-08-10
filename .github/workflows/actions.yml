@@ -9,11 +9,21 @@ jobs:
         run: |
           pwd
           ls
+
+      - name: Git Checkout
+        uses: actions/checkout@v2
+
+      - name: List files
+        run: |
+          pwd
+          ls
+
       - name: Hello World Action
         id: greet
         uses: actions/hello-world-javascript-action@main
         with:
           who-to-greet: 'Mona the Octocat'
+
       - name: Log time
         run: echo "${{steps.greet.output.time}}"
         
