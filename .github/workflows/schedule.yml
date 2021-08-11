@@ -1,0 +1,16 @@
+name: schedule workflow
+on:
+  [pull_request]
+  
+#  schedule:
+#    - cron: "* * * * *"
+    
+jobs:
+  test-workflow:
+    runs-on: ubuntu-latest
+    steps:
+      - name: testing
+        run: |
+          date
+        shell: bash
+  

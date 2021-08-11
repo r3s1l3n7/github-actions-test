@@ -1,0 +1,13 @@
+name: Matrix
+on: [push]
+jobs:
+  nodejsjob:
+    runs-on: ubuntu-latest
+    steps:
+      - name: print nodejs version
+        run: |
+          node -v
+      - name: change nodejs version action
+        uses: actions/setup-node@v1
+        with:
+            node-version: 6
