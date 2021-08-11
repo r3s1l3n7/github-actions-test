@@ -2,6 +2,9 @@ name: Matrix
 on: [push]
 jobs:
   nodejsjob:
+    strategy:
+      matrix:
+        node-version: [6,8,10]
     runs-on: ubuntu-latest
     steps:
       - name: print nodejs version
@@ -10,4 +13,4 @@ jobs:
       - name: change nodejs version action
         uses: actions/setup-node@v1
         with:
-            node-version: 6
+            node-version: ${{matrix.node-version}}
