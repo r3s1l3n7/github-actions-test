@@ -7,7 +7,7 @@ jobs:
         node-version: [6,8,10]
     runs-on: ubuntu-latest
     steps:
-      - name: print nodejs version
+      - name: print nodejs versions
         run: |
           node -v
       - name: change nodejs version action
